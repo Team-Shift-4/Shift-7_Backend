@@ -1,3 +1,43 @@
+## 작업 방식
+ 
+ 1. repository에 todo-list 작성 및 이슈코드 정하기
+ 2. issue 코드에 맞춰 branch 생성
+ 3. 개발 완료 후 커밋 및 merge request
+
+## todo-list 작성 방식
+
+```
+feat
+    0001 | 세진 | 깃허브 push 
+    0002 | 정인 | 
+```
+
+## Commit Message Rule
+
+커밋 메시지는 기본적으로 
+```
+[Type] : 동사로 마무리되는 작업내용(왠만하면)
+```
+
+ex 
+``` 
+    [feat] : Get List of Github File
+    [fix] : fix Githup api 404 response
+    [feat] : 깃허브 push
+```
+
+### Type List
+ |Type| 사용시점|
+ |-|-|
+ |feat|신규 기능 개발
+ |fix|오류 수정|
+ |style| 코드 스타일 변경
+ |refactor| refactor
+ |test| test코드 추가 및 수정
+ |remove| 파일 삭제
+ |rename| 파일 이름 변경
+ |perf| 성능개선
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>

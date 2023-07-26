@@ -1,32 +1,14 @@
 ## 작업 방식
  
  1. repository에 todo-list 작성 및 이슈코드 정하기
- 2. issue 코드에 맞춰 branch 생성
+ 2. ISSUE_NUM에 맞춰 branch 생성
  3. 개발 완료 후 커밋 및 merge request
 
-## todo-list 작성 방식
+\# 1번관련 <br/>
+  회사에서는 trello 같은 kanban board형식의 협업 툴에서 to-do list를 관리하는데, <br/>
+  임시로 텍스트 파일로 작성;;
 
-```
-feat
-    0001 | 세진 | 깃허브 push 
-    0002 | 정인 | 
-```
-
-## Commit Message Rule
-
-커밋 메시지는 기본적으로 
-```
-[Type] : 동사로 마무리되는 작업내용(왠만하면)
-```
-
-ex 
-``` 
-    [feat] : Get List of Github File
-    [fix] : fix Githup api 404 response
-    [feat] : 깃허브 push
-```
-
-### Type List
+## Type List
  |Type| 사용시점|
  |-|-|
  |feat|신규 기능 개발
@@ -37,6 +19,64 @@ ex
  |remove| 파일 삭제
  |rename| 파일 이름 변경
  |perf| 성능개선
+ |chore| 잡다한것들..
+
+## todo-list 작성 방식
+```
+ TYPE
+    ISSUE_NUM | NAME | Context
+    ISSUE_NUM | NAME | Context
+```
+
+<br/>
+예시 
+<br/>
+<br/>
+
+```
+feat
+    0001 | 세진 | 깃허브 push 
+    0002 | 정인 | 깃허브 인증
+
+fix
+    0001 | 준구 | Text editer save error fix
+    0002 | 정원 | 깃허브 api response Exception 수정
+ .
+ .
+ .
+```
+
+## Branch Strategy
+
+```
+TYPE/#ISSUE_NUM
+```
+ex 
+```
+feat/#0001
+fix/#0010
+```
+<br/>
+[devlopment] branch로 부터 new branch를 만들고 <br/>
+작업 완료 후 [devlopment] branch에 merge request
+
+
+## Commit Message Rule
+
+커밋 메시지는 기본적으로 
+```
+[Type#ISSUE_NUM] : 작업내용
+```
+
+ex 
+``` 
+    [feat#0001] : Get List of Github File
+    [fix#0003] : fix Githup api 404 response
+    [feat#0007] : 깃허브 push
+```
+
+
+#
 
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>

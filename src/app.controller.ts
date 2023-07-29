@@ -9,4 +9,10 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
+  @Get('list')
+  getList(): Promise<any> {
+    console.log('왔');
+    return this.appService.getList();
+  }
 }

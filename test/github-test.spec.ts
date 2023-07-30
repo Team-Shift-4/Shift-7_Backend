@@ -1,5 +1,5 @@
 // import { Test, TestingModule } from '@nestjs/testing';
-import { request } from './gitHubApi'
+import { request } from './api/gitHubApi'
 import { OctokitResponse } from '@octokit/types';
 
 

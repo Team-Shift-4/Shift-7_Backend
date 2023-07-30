@@ -1,52 +1,20 @@
 // import { Test, TestingModule } from '@nestjs/testing';
-import { Octokit }  from 'octokit'
-import { writeFile }    from 'fs';
+import { request } from './api/gitHubApi'
+import { OctokitResponse } from '@octokit/types';
 
-const octokit: Octokit = new Octokit({
-  'auth': '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'
-})
 
-async function getContents(): Promise<any> {
+async function getContents(): Promise<OctokitResponse<any>> {
   console.log('getContents')
-  //   octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
-  //     owner: 'ass3027',
-  //     repo: 'test',
-  //     path: '/',
-  //     headers: {
-  //       'X-GitHub-Api-Version': '2022-11-28'
-  //     }
-  //   }).then( res =>{
-  //     console.log('suc')
-  //     return res.data
-  //   }).catch( err =>{
-  //     console.log('err')
-  //     return err
-  //   })
-  let result
-  try{
-    result = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
+  return await request(
+    'GET /repos/{owner}/{repo}/contents/{path}',
+    {
       owner: 'ass3027',
       repo: 'test',
-      path: '/',
-      headers: {
-        'X-GitHub-Api-Version': '2022-11-28'
-      }
-    })
-  } catch(err)  {
-    result = err
-  }
-  return result
+      path: '',
+  });
 }
 
-async function saveFile(target: any){
-  console.log(target)
-  writeFile('/result/result.html',target ,err => {
-    console.log(1)
-    if (err) {
-      // console.error(err)
-    }
-  })
-}
+
 
 describe('github test', () => {
 
@@ -55,7 +23,7 @@ describe('github test', () => {
 
     expect(result).not.toBeNull()
 
-    await saveFile(result)
+    // await saveFile(result)
     // console.log(result);
 
   })

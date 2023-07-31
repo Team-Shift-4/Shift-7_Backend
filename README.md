@@ -5,8 +5,8 @@
  3. 개발 완료 후 커밋 및 merge request
 
 \# 1번관련 <br/>
-  회사에서는 trello 같은 kanban board형식의 협업 툴에서 to-do list를 관리하는데, <br/>
-  임시로 텍스트 파일로 작성;;
+Github Project로 관리
+추가적으로 Docs 추가(문서 작업)
 
 ## Type List
  |Type| 사용시점|
@@ -19,6 +19,7 @@
  |remove| 파일 삭제
  |rename| 파일 이름 변경
  |perf| 성능개선
+ |docs| 문서 추가, 수정, 삭제
  |chore| 잡다한것들..
 
 ## todo-list 작성 방식

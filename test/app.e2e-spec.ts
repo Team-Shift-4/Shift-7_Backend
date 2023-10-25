@@ -21,4 +21,18 @@ describe('AppController (e2e)', () => {
       .expect(200)
       .expect('Hello World!');
   });
+
+  it('/test (GET)', () => {
+    return request(app.getHttpServer())
+      .get('/test')
+      .expect(200)
+      .expect('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');
+  });
+
+  it('/file/repoList', () => {
+    return request(app.getHttpServer)
+      .get('/file/repoList')
+      .expect(200)
+      .expect('t');
+  });
 });

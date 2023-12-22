@@ -1,19 +1,22 @@
-import { Controller, Get, Param, Query } from '@nestjs/common';
+import { Controller, Get, Logger, Param, Query } from '@nestjs/common';
 import { FileService } from './file.service';
-import { FileListDto } from './dto/FileListDto';
+import { FileDto } from './dto/FileListDto';
 
 @Controller('file')
 export class FileController {
-  constructor(private readonly fileService: FileService) {}
-
+  constructor(
+    private readonly fileService: FileService,
+    private readonly logger: Logger,
+  ) {}
   @Get('list')
-  async getFileList(@Query() fileListDto: FileListDto): Promise<FileListDto[]> {
-    console.log(fileListDto);
-    const result = await this.fileService.getFileList();
+  async getFileList(@Query() fileDto: FileDto): Promise<FileDto[]> {
+    this.logger.log(fileDto);
+    console.log(fileDto);
+    const result = await this.fileService.getFileList(fileDto);
     return result;
   }
 
-  @Get('repoList')
+  @Get('repo-list')
   async getRepoList(@Query() teamName: string) {
     console.log(teamName);
     return await this.fileService.getRepoList();

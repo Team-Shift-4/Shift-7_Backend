@@ -22,17 +22,17 @@ describe('AppController (e2e)', () => {
       .expect('Hello World!');
   });
 
+  it('/file/repo-list (GET)', () => {
+    return request(app.getHttpServer)
+      .get('/file/repo-list')
+      .expect(200)
+      .expect('t');
+  }, 3000);
+
   it('/test (GET)', () => {
     return request(app.getHttpServer())
       .get('/test')
       .expect(200)
       .expect('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');
-  });
-
-  it('/file/repoList', () => {
-    return request(app.getHttpServer)
-      .get('/file/repoList')
-      .expect(200)
-      .expect('t');
   });
 });

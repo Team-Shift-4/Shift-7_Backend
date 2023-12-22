@@ -1,5 +1,5 @@
-export class FileListDto {
-    owner: string;
-    repo: string;
-    path: string;
+export class FileDto {
+  owner: string;
+  repo: string;
+  path: string;
 }

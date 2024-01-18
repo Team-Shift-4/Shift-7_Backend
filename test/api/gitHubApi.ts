@@ -4,7 +4,7 @@ import { OctokitResponse } from '@octokit/types';
 
 function getApi(): Octokit {
   return new Octokit({
-    auth: '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',
+    auth: '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',
   });
 }
 

@@ -1,4 +1,4 @@
-import { Controller, Get, Logger, Param, Query } from '@nestjs/common';
+import { Controller, Get, Logger, Query } from '@nestjs/common';
 import { FileService } from './file.service';
 import { FileDto } from './dto/FileListDto';
 
@@ -11,7 +11,6 @@ export class FileController {
   @Get('list')
   async getFileList(@Query() fileDto: FileDto): Promise<FileDto[]> {
     this.logger.log(fileDto);
-    console.log(fileDto);
     const result = await this.fileService.getFileList(fileDto);
     return result;
   }

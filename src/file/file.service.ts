@@ -18,7 +18,6 @@ export class FileService {
     let res = await request('GET /orgs/{org}/repos', {
       org: 'Team-Shift-4',
     });
-    // const repoList: Repository[] = res.data.map((repo: any) => {
     const repoList = res.data.map((repo: any) => {
       return {
         name: repo.full_name,
